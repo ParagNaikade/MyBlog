@@ -5,8 +5,12 @@ This website has been created with following tech stack:
 	*NodeJs
 	*ExpressJs
 	*MongoDB
+	 * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
 	
 ---------------
 
-## Coming soon: ##
-	*Deployment in docker
+## Coming soon ##
+	Deployment in docker
