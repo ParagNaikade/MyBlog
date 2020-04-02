@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 const withDb = async (func, res) => {
     try {
 
-        const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true });
+        const client = await MongoClient.connect('mongodb://test:test@mongo:27017', { useNewUrlParser: true });
 
         const db = client.db('BlogDb');
 
@@ -31,6 +31,14 @@ app.get('/api/articles/:name', async (req, res) => {
 
         res.status(200).json(articleInfo);
     }, res)
+});
+
+app.get('/api/test/:name', async (req, res) => {
+
+    const articleName = req.params.name + 'hello';
+
+    res.status(200).json(articleName);
+
 });
 
 app.post('/api/articles/:name/upvote', async (req, res) => {
@@ -67,7 +75,7 @@ app.post('/api/articles/:name/add-comment', (req, res) => {
         const updatedArticleInfo = await db.collection('articles').findOne({ name: articleName });
 
         res.status(200).json(updatedArticleInfo);
-    });
+    }, res);
 });
 
 app.get('*', (req, res) => {
