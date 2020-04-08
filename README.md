@@ -5,9 +5,6 @@ This website has been created with following tech stack:
 * ExpressJs
 * MongoDB
 
-## Coming soon ##
-	Deployment in docker
-
 #### Steps to follow to run app ####
 1. Open the terminal inside `Server` folder and run `npm install`.
 2. Once all packages are installed, run `npm start`.
